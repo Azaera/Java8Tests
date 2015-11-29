@@ -55,7 +55,7 @@ public class Model {
 		list += "\n";
 		return list;
 	}
-	
+
 	public String iterateLambda() {		
 		String list = "";
 		//Reaching the print method. 
