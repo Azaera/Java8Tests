@@ -26,8 +26,10 @@ public class Controller {
 		view.oldWayListener(new oldWayListener());
 		view.predicateOldListener(new PredicateOld());
 		view.predicateLambdaListener(new PredicateLambda());
-		view.iterate(new iterate());
-		view.iterateLambda(new iterateLambda());
+		view.iterate(new Iterate());
+		view.iterateLambda(new IterateLambda());
+		view.sortLambda(new SortLambda());
+		view.sortOldway(new SortOldway());
 	}
 	
 	public void start(){
@@ -82,7 +84,7 @@ public class Controller {
 		}
 	}
 	
-	class iterate implements ActionListener {
+	class Iterate implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String list;
 			list = model.iterateOld();
@@ -91,12 +93,28 @@ public class Controller {
 		}
 	}
 	
-	class iterateLambda implements ActionListener {
+	class IterateLambda implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			String list;
 			
 			list = model.iterateLambda();
 			
+			view.setText(list);
+		}
+	}
+	
+	class SortLambda implements ActionListener {
+		public void actionPerformed(ActionEvent e){
+			String list;
+			list = model.sortLambda();
+			view.setText(list);
+		}
+	}
+	
+	class SortOldway implements ActionListener {
+		public void actionPerformed(ActionEvent e ) {
+			String list;
+			list = model.sortOldway();
 			view.setText(list);
 		}
 	}

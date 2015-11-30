@@ -17,11 +17,15 @@ public class View {
 	private JButton predicateOld = new JButton("Predicate");
 	private JButton predicateLambda = new JButton("Predicate - Lambda");
 
-	private JButton oldWay = new JButton("ActionListener - old way");
+	private JButton oldWay = new JButton("ActionListener - Old way");
 	private JButton lambdaWay = new JButton("ActionListener - Lambda");
 	
 	private JButton iterate = new JButton("Iterate List");
-	private JButton iterateLambda = new JButton("Iterate - lambda");
+	private JButton iterateLambda = new JButton("Iterate - Lambda");
+	
+	private JButton sortOldway = new JButton("Sorting - Old way");
+	private JButton sortLambda = new JButton("Sorting - Lambda");
+
 	private JTextArea printer = new JTextArea(43,40);
 	
 	private Dimension left = new Dimension();
@@ -62,6 +66,15 @@ public class View {
 		gbc.gridx = 3;
 		gbc.gridy = 2;
 		leftSide.add(iterateLambda, gbc);
+		
+		gbc.gridx = 1;
+		gbc.gridy = 3;
+		leftSide.add(sortOldway, gbc);
+		
+		gbc.gridx = 3;
+		gbc.gridy = 3;
+		leftSide.add(sortLambda, gbc);
+		
 		/*
 		 * Lambda way to use actionlistener. 
 		 * Notice no need to use a inner class in controller
@@ -86,7 +99,13 @@ public class View {
 		
 	}
 	
+	public void sortOldway(ActionListener act){
+		sortOldway.addActionListener(act);
+	}
 	
+	public void sortLambda(ActionListener act) {
+		sortLambda.addActionListener(act);
+	}
 	
 	public void iterate(ActionListener act){
 		iterate.addActionListener(act);

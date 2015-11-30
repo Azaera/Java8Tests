@@ -67,5 +67,28 @@ public class Model {
 		list += "\n";
 		return list;
 	}
+	
+	public String sortOldway() {
+		String sortedList = "Sorted by name\n";
+		
+		Collections.sort(names, new NameComparator());
+		for( int i = 0; i < names.size(); i++ ) {
+			sortedList += names.get(i);
+		}
+
+		return sortedList;
+	}
+	
+	public String sortLambda() {
+		String list = "Sorted by name\n";
+		
+		// Head to static method in Names to compare list 
+		Collections.sort(names, Names::nameCompare);
+		
+		list += names.toString().replace(",", "")
+				.replace("[", "").replace("]", "");
+		System.out.println(list);
+		return list;
+	}
 
 }
